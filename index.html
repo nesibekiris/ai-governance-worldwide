@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global AI Governance Comparison Matrix 2025 - TechLetter</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f0;
+            color: #2c3e50;
+            line-height: 1.4;
+            font-size: 11px;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 15mm;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #2c3e50;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 4px;
+        }
+        
+        .metadata {
+            font-size: 12px;
+            color: #95a5a6;
+        }
+        
+        .branding {
+            font-size: 13px;
+            color: #3498db;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-weight: 400;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 4px;
+        }
+
+        .stat-description {
+            font-size: 10px;
+            color: #95a5a6;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 20px;
+            background: #ecf0f1;
+            padding: 2px;
+            border-radius: 6px;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 10px 15px;
+            background: transparent;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 500;
+            color: #7f8c8d;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .tab-button:hover {
+            background: rgba(52, 152, 219, 0.1);
+            color: #2c3e50;
+        }
+
+        .tab-button.active {
+            background: #3498db;
+            color: white;
+            box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Scrollable Comparison Grid */
+        .grid-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 140px repeat(11, 200px);
+            gap: 1px;
+            background: #ddd;
+            border: 1px solid #ddd;
+            min-width: max-content;
+        }
+        
+        .cell {
+            background: white;
+            padding: 10px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-header {
+            font-weight: 700;
+            background: #2c3e50;
+            color: white;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: sticky;
+            left: 0;
+            z-index: 10;
+        }
+        
+        .country-header {
+            background: #ecf0f1;
+            font-weight: 600;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 15px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+        
+        .country-name {
+            font-size: 13px;
+            margin-bottom: 4px;
+            color: #2c3e50;
+        }
+        
+        .country-flag {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+        
+        .row-header {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+            border-left: 3px solid #3498db;
+            position: sticky;
+            left: 0;
+            z-index: 5;
+        }
+        
+        /* Color coding for different approaches */
+        .comprehensive { background: #e8f5e9; }
+        .innovation-first { background: #fff3e0; }
+        .state-led { background: #fce4ec; }
+        .balanced { background: #e3f2fd; }
+        
+        .legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+            font-size: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 10px;
+            color: #7f8c8d;
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .small-text {
+            font-size: 9px;
+            color: #7f8c8d;
+        }
+
+        /* Additional content styling */
+        .content-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .content-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .content-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #3498db;
+        }
+
+        .content-card h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .content-card p {
+            font-size: 10px;
+            color: #7f8c8d;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+
+        .content-card p strong {
+            color: #2c3e50;
+        }
+
+        .scrollable-wrapper {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(52, 152, 219, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        .scrollable-wrapper:hover .scroll-indicator {
+            opacity: 0;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .comparison-grid {
+                break-inside: avoid;
+            }
+            .tab-nav {
+                display: none;
+            }
+            .tab-content {
+                display: block !important;
+                page-break-before: always;
+            }
+            .tab-content:first-child {
+                page-break-before: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Global AI Governance Matrix</h1>
+        <div class="subtitle">Comprehensive Analysis of AI Regulatory Frameworks</div>
+        <div class="metadata">August 2025 | Latest Updates Including US AI Action Plan & EU GPAI Rules</div>
+        <div class="branding">Prepared by TechLetter.co</div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="stats-section">
+        <div class="stat-card">
+            <h3>Countries Analyzed</h3>
+            <div class="stat-number">50+</div>
+            <div class="stat-description">Major jurisdictions and regional bodies</div>
+        </div>
+        <div class="stat-card">
+            <h3>Total AI Investment</h3>
+            <div class="stat-number">$1.2T+</div>
+            <div class="stat-description">Including Stargate $500B & sovereign funds</div>
+        </div>
+        <div class="stat-card">
+            <h3>Key Documents</h3>
+            <div class="stat-number">250+</div>
+            <div class="stat-description">Laws, executive orders, frameworks analyzed</div>
+        </div>
+        <div class="stat-card">
+            <h3>Active Enforcement</h3>
+            <div class="stat-number">15+</div>
+            <div class="stat-description">Countries with penalties & compliance</div>
+        </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+        <button class="tab-button active" onclick="showTab('comparison')">AI Governance Comparison</button>
+        <button class="tab-button" onclick="showTab('regulations')">Regulations & Laws</button>
+        <button class="tab-button" onclick="showTab('guidelines')">Guidelines & Frameworks</button>
+        <button class="tab-button" onclick="showTab('strategies')">Whitepapers & Strategies</button>
+        <button class="tab-button" onclick="showTab('investments')">Investments & Funding</button>
+        <button class="tab-button" onclick="showTab('enforcement')">Enforcement & Timeline</button>
+    </div>
+
+    <!-- Comparison Tab -->
+    <div id="comparison" class="tab-content active">
+        <div class="scrollable-wrapper">
+            <div class="scroll-indicator">→ Scroll for more countries</div>
+            <div class="grid-container">
+                <div class="comparison-grid">
+                    <div class="cell category-header">Framework</div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇪🇺</div>
+                        <div class="country-name">European Union</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇬🇧</div>
+                        <div class="country-name">United Kingdom</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇺🇸</div>
+                        <div class="country-name">United States</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇨🇳</div>
+                        <div class="country-name">China</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇯🇵</div>
+                        <div class="country-name">Japan</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇰🇷</div>
+                        <div class="country-name">South Korea</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇸🇬</div>
+                        <div class="country-name">Singapore</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🏛️</div>
+                        <div class="country-name">ASEAN</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇮🇳</div>
+                        <div class="country-name">India</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇸🇦</div>
+                        <div class="country-name">Saudi Arabia</div>
+                    </div>
+                    <div class="cell country-header">
+                        <div class="country-flag">🇦🇪</div>
+                        <div class="country-name">UAE</div>
+                    </div>
+
+                    <div class="cell row-header">Key Policy</div>
+                    <div class="cell comprehensive"><span class="highlight">EU AI Act (2024)</span><br><span class="small-text">GPAI rules Aug 2, 2025</span></div>
+                    <div class="cell innovation-first"><span class="highlight">AI Bill pending</span><br><span class="small-text">Summer 2025 expected</span></div>
+                    <div class="cell innovation-first"><span class="highlight">AI Action Plan</span><br><span class="small-text">July 23, 2025</span></div>
+                    <div class="cell state-led"><span class="highlight">Multiple Regs</span><br><span class="small-text">Sept 2025 labeling</span></div>
+                    <div class="cell innovation-first"><span class="highlight">AI Promotion Act</span><br><span class="small-text">May 28, 2025</span></div>
+                    <div class="cell balanced"><span class="highlight">AI Framework Act</span><br><span class="small-text">Effective Jan 2026</span></div>
+                    <div class="cell balanced"><span class="highlight">Model Framework</span><br><span class="small-text">Updated May 2024</span></div>
+                    <div class="cell balanced"><span class="highlight">AI Guide 2024</span><br><span class="small-text">Regional harmony</span></div>
+                    <div class="cell innovation-first"><span class="highlight">IndiaAI Mission</span><br><span class="small-text">₹2,000cr FY25-26</span></div>
+                    <div class="cell state-led"><span class="highlight">Transcendence</span><br><span class="small-text">$100B project</span></div>
+                    <div class="cell state-led"><span class="highlight">AI Strategy 2031</span><br><span class="small-text">AED 335B target</span></div>
+
+                    <div class="cell row-header">Philosophy</div>
+                    <div class="cell comprehensive">Risk-based<br>Rights-focused<br>Global standard</div>
+                    <div class="cell innovation-first">Pro-innovation<br>Light-touch<br>Agile approach</div>
+                    <div class="cell innovation-first">Deregulation<br>Remove barriers<br>AI leadership</div>
+                    <div class="cell state-led">State control<br>Security-first<br>Socialist values</div>
+                    <div class="cell innovation-first">Zero penalties<br>Name & shame<br>Most AI-friendly</div>
+                    <div class="cell balanced">Innovation-risk<br>Public-private<br>Trust building</div>
+                    <div class="cell balanced">Voluntary<br>Testing focus<br>Interoperable</div>
+                    <div class="cell balanced">Harmonization<br>Capacity build<br>Inclusive</div>
+                    <div class="cell innovation-first">AI for All<br>Development<br>Digital public</div>
+                    <div class="cell state-led">Diversification<br>Arabic focus<br>NEOM vision</div>
+                    <div class="cell state-led">Hub ambition<br>Govt-led AI<br>Economic focus</div>
+
+                    <div class="cell row-header">Goals</div>
+                    <div class="cell">Trustworthy AI<br>€200B infrast<br>Global influence<br>Single market</div>
+                    <div class="cell">AI superpower<br>£14B private<br>20x compute<br>Regulatory edge</div>
+                    <div class="cell">Win AI race<br>$500B Stargate<br>Infrastructure<br>Intl leadership</div>
+                    <div class="cell">2030 leader<br>300 EFLOPS<br>Self-reliance<br>AI+ sectors</div>
+                    <div class="cell">Society 5.0<br>Address aging<br>$3B OpenAI<br>Robot nation</div>
+                    <div class="cell">Top 3 by 2027<br>₩2.4T invest<br>70% adoption<br>20K experts</div>
+                    <div class="cell">Trust hub<br>FinTech AI<br>Standards<br>ASEAN lead</div>
+                    <div class="cell">Regional AI<br>Traditional<br>Shared growth<br>Digital gap</div>
+                    <div class="cell">Global South<br>Inclusive AI<br>14K+ GPUs<br>Scale apps</div>
+                    <div class="cell">Top 15 2030<br>300+ startups<br>12% GDP AI<br>Arabic NLP</div>
+                    <div class="cell">Global hub<br>MGX $100B<br>Regional HQ<br>UAI brand</div>
+
+                    <div class="cell row-header">Governance</div>
+                    <div class="cell">EU AI Office<br>National auth<br>Sci Panel<br>AI Board</div>
+                    <div class="cell">DSIT lead<br>Sectoral regs<br>Central func<br>No new body</div>
+                    <div class="cell">White House<br>NIST/CAIO<br>State varied<br>Agency-specific</div>
+                    <div class="cell">CAC/MOST<br>Multi-ministry<br>Algo registry<br>Data Bureau</div>
+                    <div class="cell">AI Strategy Ctr<br>Cabinet Office<br>METI/MIC<br>Industry-led</div>
+                    <div class="cell">Presidential<br>MSIT primary<br>Safety Institute<br>Security Group</div>
+                    <div class="cell">IMDA/PDPC<br>AI Verify<br>Advisory<br>Trust Centre</div>
+                    <div class="cell">Member states<br>Secretariat<br>Working grps<br>Voluntary</div>
+                    <div class="cell">MeitY lead<br>NITI Aayog<br>Mission Dir<br>Multi-sector</div>
+                    <div class="cell">SDAIA<br>Crown Prince<br>Vision 2030<br>Cross-ministry</div>
+                    <div class="cell">AI Ministry<br>Federal level<br>Free zones<br>MGX Fund</div>
+
+                    <div class="cell row-header">Key Features</div>
+                    <div class="cell">8 prohibitions<br>GPAI rules<br>CE marking<br>Transparency</div>
+                    <div class="cell">5 principles<br>Sandboxes<br>MHRA Airlock<br>Voluntary now</div>
+                    <div class="cell">90 actions<br>3 pillars<br>Site leasing<br>Clean energy</div>
+                    <div class="cell">Algo filing<br>Content label<br>Security assess<br>Clear & Bright</div>
+                    <div class="cell">No penalties<br>Guidelines<br>Society focus<br>Local govt AI</div>
+                    <div class="cell">Risk tiers<br>Trust cert<br>Labeling req<br>Human oversight</div>
+                    <div class="cell">9 dimensions<br>AI Verify<br>GenAI sandbox<br>Food label</div>
+                    <div class="cell">7 principles<br>4 components<br>Living doc<br>Capacity focus</div>
+                    <div class="cell">7 pillars<br>Sectoral<br>Datasets<br>FutureSkills</div>
+                    <div class="cell">Ethics guide<br>Sector rules<br>NEOM city<br>Google $5-10B</div>
+                    <div class="cell">Ethics frame<br>4-level UAI<br>Priority sectors<br>Stargate invest</div>
+
+                    <div class="cell row-header">Infrastructure</div>
+                    <div class="cell comprehensive">€200B plan<br>AI Factories<br>€20B gigafab<br>EuroHPC</div>
+                    <div class="cell innovation-first">20x by 2030<br>6GW centers<br>Culham zone<br>£14B private</div>
+                    <div class="cell innovation-first">$500B Stargate<br>Fed sites<br>Nuclear power<br>$100B immediate</div>
+                    <div class="cell state-led">300 EFLOPS<br>East-West<br>$700M+ west<br>Domestic chips</div>
+                    <div class="cell innovation-first">10.8K GPUs<br>METI deals<br>Regional hubs<br>21 local govts</div>
+                    <div class="cell balanced">₩2T compute<br>Global lab<br>K-Network<br>HBM chips</div>
+                    <div class="cell balanced">S$150M compute<br>Digital Trust<br>SME sandbox<br>FOSS lead</div>
+                    <div class="cell balanced">Varies wide<br>SG advanced<br>Digital gaps<br>Member focus</div>
+                    <div class="cell innovation-first">14K+ GPUs<br>Subsidized<br>Digital stack<br>68-GPU system</div>
+                    <div class="cell state-led">$100B fund<br>NEOM AI<br>Massive scale<br>A-H partner</div>
+                    <div class="cell state-led">Sovereign AI<br>World-class<br>5G leader<br>Cloud focus</div>
+
+                    <div class="cell row-header">Worker Impact</div>
+                    <div class="cell">High-risk cat<br>No emotion AI<br>Right explain<br>Notification</div>
+                    <div class="cell">7.5M training<br>Existing law<br>No algo rules<br>Skills focus</div>
+                    <div class="cell">Limited federal<br>State varies<br>Market-based<br>DOL guidance</div>
+                    <div class="cell">AI+ integrate<br>Social credit<br>40% concerned<br>SOE leadership</div>
+                    <div class="cell">Augmentation<br>Robot culture<br>SME support<br>Productivity</div>
+                    <div class="cell">Upskilling<br>Anti-discrim<br>Deepfake law<br>Digital literacy</div>
+                    <div class="cell">Job redesign<br>SME programs<br>Public AI<br>Workforce up</div>
+                    <div class="cell">Member varies<br>Skills gaps<br>Development<br>Informal sector</div>
+                    <div class="cell">Skills India<br>Rural AI<br>Job creation<br>Youth focus</div>
+                    <div class="cell">Saudization<br>Women AI<br>Youth train<br>20K experts</div>
+                    <div class="cell">Emiratization<br>High-skill<br>Gov AI 100%<br>Talent attract</div>
+
+                    <div class="cell row-header">Copyright/IP</div>
+                    <div class="cell">GPAI disclosure<br>Code Practice<br>Opt-out rights<br>Transparency</div>
+                    <div class="cell">TDM limited<br>Consultation<br>Court decides<br>2025 proposals</div>
+                    <div class="cell">Fair use debate<br>USPTO review<br>Lawsuits active<br>Uncertain</div>
+                    <div class="cell">Lawful sources<br>AI can copyright<br>Natural inventor<br>Platform liable</div>
+                    <div class="cell">Flexible<br>Research OK<br>Guidelines<br>Innovation</div>
+                    <div class="cell">Article 28-12<br>PIPA amend<br>Research law<br>Foreign comply</div>
+                    <div class="cell">Balanced<br>Privacy tech<br>Case-by-case<br>Pragmatic</div>
+                    <div class="cell">Developing<br>Member varies<br>Harmonize goal<br>Limited</div>
+                    <div class="cell">Existing IP<br>No AI-specific<br>Developing<br>Traditional</div>
+                    <div class="cell">Developing<br>Tech transfer<br>Arabic focus<br>Building</div>
+                    <div class="cell">Developing<br>Free zones<br>International<br>Flexible</div>
+
+                    <div class="cell row-header">Timeline</div>
+                    <div class="cell">Aug 2 2025 GPAI<br>Aug 2026 full<br>Aug 2027 exist</div>
+                    <div class="cell">Summer 2025 Bill<br>April 2024 guide<br>Ongoing</div>
+                    <div class="cell">July 2025 plan<br>180-day review<br>Immediate</div>
+                    <div class="cell">Sept 2025 label<br>2025 300 EFLOPS<br>2030 leader</div>
+                    <div class="cell">May 2025 Act<br>Summer Center<br>Annual update</div>
+                    <div class="cell">Jan 2026 Act<br>2025 sub-regs<br>2027 top 3</div>
+                    <div class="cell">May 2024 frame<br>Feb 2025 pilot<br>Continuous</div>
+                    <div class="cell">2025-2030<br>Phase 1 now<br>Living doc</div>
+                    <div class="cell">2024-2029<br>FY25-26 peak<br>Mission period</div>
+                    <div class="cell">2030 targets<br>2025 milestones<br>Ongoing</div>
+                    <div class="cell">2031 targets<br>2025 updates<br>Continuous</div>
+
+                    <div class="cell row-header">Penalties</div>
+                    <div class="cell comprehensive">€35M or 7%<br>€15M high-risk<br>Active Aug 2</div>
+                    <div class="cell innovation-first">None AI-specific<br>Existing law<br>Future Bill</div>
+                    <div class="cell innovation-first">FTC active<br>State varies<br>No federal AI</div>
+                    <div class="cell state-led">Criminal 7yr<br>₩100K algo<br>Suspension<br>₩1M exec</div>
+                    <div class="cell innovation-first">Zero penalties<br>Name & shame<br>Admin guide</div>
+                    <div class="cell balanced">₩30M fines<br>Investigation<br>Cert revoke<br>MSIT power</div>
+                    <div class="cell balanced">Voluntary<br>Market-based<br>Reputation<br>Existing law</div>
+                    <div class="cell balanced">None<br>Voluntary<br>Guidance only<br>Building</div>
+                    <div class="cell innovation-first">Sectoral only<br>Limited<br>Developing<br>Light-touch</div>
+                    <div class="cell state-led">Developing<br>Admin measures<br>Building frame</div>
+                    <div class="cell state-led">Light-touch<br>Business focus<br>Reputation<br>Free zones</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color comprehensive"></div>
+                <span>Comprehensive Regulation (EU-style)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color innovation-first"></div>
+                <span>Innovation-First (US/UK/JP approach)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color state-led"></div>
+                <span>State-Led (China/Gulf approach)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color balanced"></div>
+                <span>Balanced Approach (Korea/Singapore)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Regulations & Laws Tab -->
+    <div id="regulations" class="tab-content">
+        <div class="content-section">
+            <h3>AI Regulations and Laws by Region - August 2025 Status</h3>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>🇪🇺 European Union - EU AI Act</h4>
+                    <p><strong>Status:</strong> Active law (Regulation 2024/1689)</p>
+                    <p><strong>Latest:</strong> GPAI obligations effective Aug 2, 2025</p>
+                    <p><strong>Approach:</strong> Risk-based with 4 tiers, 8 prohibited practices</p>
+                    <p><strong>Key Features:</strong> CE marking, conformity assessments, transparency</p>
+                    <p><strong>Penalties:</strong> Up to €35M or 7% global turnover (now active)</p>
+                    <p><strong>Timeline:</strong> Aug 2026 full application, Aug 2027 existing systems</p>
+                    <p><strong>Implementation:</strong> Only Spain, Denmark, Malta fully ready</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇺🇸 United States - AI Action Plan</h4>
+                    <p><strong>Status:</strong> "Winning the AI Race" released July 23, 2025</p>
+                    <p><strong>Federal:</strong> EO 14148 & 14141 rescinded Biden oversight</p>
+                    <p><strong>Approach:</strong> 3 pillars - innovation, infrastructure, diplomacy</p>
+                    <p><strong>Key Features:</strong> 90 policy actions, federal site leasing</p>
+                    <p><strong>State Laws:</strong> CA (18 laws), NY RAISE Act, TX TRAIGA</p>
+                    <p><strong>Enforcement:</strong> FTC Operation AI Comply active</p>
+                    <p><strong>Penalties:</strong> Varies by state, FTC fines up to millions</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇨🇳 China - Multiple Active Regulations</h4>
+                    <p><strong>Status:</strong> Continuous regulatory updates</p>
+                    <p><strong>Latest:</strong> AI labeling rules effective Sept 1, 2025</p>
+                    <p><strong>Key Laws:</strong> Algorithm Provisions, Deep Synthesis, GenAI Measures</p>
+                    <p><strong>Features:</strong> 1,400+ algorithms registered, security assessments</p>
+                    <p><strong>Enforcement:</strong> "Clear and Bright" campaign active</p>
+                    <p><strong>Penalties:</strong> Criminal up to 7 years, service suspension</p>
+                    <p><strong>Content:</strong> Socialist values alignment required</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇬🇧 United Kingdom - Pending AI Bill</h4>
+                    <p><strong>Status:</strong> Non-statutory framework active</p>
+                    <p><strong>AI Bill:</strong> Lord Holmes' Bill expected Summer 2025</p>
+                    <p><strong>Approach:</strong> 5 principles via existing regulators</p>
+                    <p><strong>Features:</strong> No new AI regulator, sector-specific</p>
+                    <p><strong>Infrastructure:</strong> AI Growth Zones, 20x compute by 2030</p>
+                    <p><strong>Focus:</strong> Innovation and flexibility priority</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇯🇵 Japan - AI Promotion Act</h4>
+                    <p><strong>Status:</strong> Law passed May 28, 2025</p>
+                    <p><strong>Philosophy:</strong> "Most AI-friendly country in the world"</p>
+                    <p><strong>Features:</strong> Zero penalties, voluntary principles</p>
+                    <p><strong>Enforcement:</strong> Name and shame only</p>
+                    <p><strong>Infrastructure:</strong> AI Strategy Center launching summer 2025</p>
+                    <p><strong>Partnership:</strong> SoftBank-OpenAI $3B annual deal</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇰🇷 South Korea - AI Framework Act</h4>
+                    <p><strong>Status:</strong> Passed Dec 26, 2024, effective Jan 22, 2026</p>
+                    <p><strong>Approach:</strong> First comprehensive AI law in Asia-Pacific</p>
+                    <p><strong>Features:</strong> High-impact AI oversight, labeling requirements</p>
+                    <p><strong>Penalties:</strong> Administrative fines up to ₩30 million</p>
+                    <p><strong>Goals:</strong> Top 3 AI power by 2027, 70% deployment by 2030</p>
+                    <p><strong>Note:</strong> DeepSeek suspended for non-compliance</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇧🇷 Brazil - Pending AI Bill</h4>
+                    <p><strong>Status:</strong> PL 2338/2023 passed Senate, in Chamber</p>
+                    <p><strong>Approach:</strong> Risk-based with human rights focus</p>
+                    <p><strong>Features:</strong> Excessive and high-risk categories</p>
+                    <p><strong>Penalties:</strong> Up to BRL 50M or 2% revenue</p>
+                    <p><strong>Timeline:</strong> Expected passage late 2025</p>
+                    <p><strong>Investment:</strong> BRL 23 billion AI plan</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇨🇦 Canada - Legislative Vacuum</h4>
+                    <p><strong>Status:</strong> Bill C-27/AIDA died January 2025</p>
+                    <p><strong>Current:</strong> No federal AI legislation</p>
+                    <p><strong>Active:</strong> Canadian AI Safety Institute operational</p>
+                    <p><strong>Investment:</strong> CAD $2.4B Sovereign Compute Strategy</p>
+                    <p><strong>Future:</strong> Uncertain after October 2025 election</p>
+                    <p><strong>Approach:</strong> Research-first via CAISI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guidelines & Frameworks Tab -->
+    <div id="guidelines" class="tab-content">
+        <div class="content-section">
+            <h3>International AI Guidelines and Frameworks - 2025 Updates</h3>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>🌐 G7 Hiroshima AI Process</h4>
+                    <p><strong>Status:</strong> Reporting Framework launched Feb 2025</p>
+                    <p><strong>Participants:</strong> 19 organizations published reports</p>
+                    <p><strong>Companies:</strong> Amazon, Anthropic, Google, Microsoft, OpenAI</p>
+                    <p><strong>Transparency:</strong> Reports at transparency.oecd.ai</p>
+                    <p><strong>Focus:</strong> Risk management practices disclosure</p>
+                    <p><strong>Impact:</strong> First major transparency milestone</p>
+                </div>
+                <div class="content-card">
+                    <h4>🏛️ Council of Europe - AI Convention</h4>
+                    <p><strong>Status:</strong> First binding AI treaty opened Sept 5, 2024</p>
+                    <p><strong>Signatories:</strong> EU, UK, US, Israel among initial</p>
+                    <p><strong>Scope:</strong> Entire AI lifecycle, risk-based</p>
+                    <p><strong>Requirements:</strong> Independent oversight mechanisms</p>
+                    <p><strong>Exceptions:</strong> National security allowed</p>
+                    <p><strong>Entry:</strong> Requires 5 ratifications</p>
+                </div>
+                <div class="content-card">
+                    <h4>🌍 OECD - AI Principles 2.0</h4>
+                    <p><strong>Updated:</strong> May 2024 with major revisions</p>
+                    <p><strong>Endorsed:</strong> 47 jurisdictions including EU</p>
+                    <p><strong>New Focus:</strong> Safety, misinformation, sustainability</p>
+                    <p><strong>Tools:</strong> Policy Observatory, Compute Tracker</p>
+                    <p><strong>2025 Papers:</strong> Incident reporting frameworks</p>
+                    <p><strong>Impact:</strong> G7 adoption baseline</p>
+                </div>
+                <div class="content-card">
+                    <h4>🌐 UNESCO - Ethics Implementation</h4>
+                    <p><strong>3rd Global Forum:</strong> June 24-27, 2025 Bangkok</p>
+                    <p><strong>Assessments:</strong> 60+ countries evaluated</p>
+                    <p><strong>Focus:</strong> Asia-Pacific regional priorities</p>
+                    <p><strong>Tools:</strong> Readiness Assessment Methodology</p>
+                    <p><strong>Observatory:</strong> Global Ethics monitoring active</p>
+                    <p><strong>Reporting:</strong> 4-year implementation cycles</p>
+                </div>
+                <div class="content-card">
+                    <h4>ISO/IEC - Technical Standards</h4>
+                    <p><strong>Series:</strong> 23053 & 23894 expanded</p>
+                    <p><strong>Scope:</strong> AI lifecycle, risk, governance</p>
+                    <p><strong>New 2025:</strong> Certification frameworks</p>
+                    <p><strong>Industry:</strong> Global adoption increasing</p>
+                    <p><strong>Purpose:</strong> Technical specifications baseline</p>
+                    <p><strong>Integration:</strong> National standards alignment</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇸🇬 Singapore - GenAI Framework</h4>
+                    <p><strong>Status:</strong> World's first GenAI governance</p>
+                    <p><strong>Updated:</strong> May 2024 with 9 dimensions</p>
+                    <p><strong>AI Verify:</strong> Global pilot Feb 2025</p>
+                    <p><strong>Features:</strong> "Food label" transparency</p>
+                    <p><strong>Impact:</strong> ASEAN regional standard</p>
+                    <p><strong>Community:</strong> 50+ global participants</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Whitepapers & Strategies Tab -->
+    <div id="strategies" class="tab-content">
+        <div class="content-section">
+            <h3>National AI Strategies and Investment Plans - 2025 Updates</h3>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>🇺🇸 US - "Winning the AI Race" Action Plan</h4>
+                    <p><strong>Released:</strong> July 23, 2025 (28 pages)</p>
+                    <p><strong>Investment:</strong> $500B Stargate + $100B immediate</p>
+                    <p><strong>Infrastructure:</strong> Federal site leasing program</p>
+                    <p><strong>Timeline:</strong> 90 actions, 6-12 month execution</p>
+                    <p><strong>Focus:</strong> Remove barriers, build infrastructure, lead globally</p>
+                    <p><strong>Energy:</strong> Nuclear power deployment for AI</p>
+                    <p><strong>Private:</strong> Apple $500B+, Microsoft $80B FY2025</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇨🇳 China - 300 EFLOPS by 2025</h4>
+                    <p><strong>Computing:</strong> 300 EFLOPS target this year</p>
+                    <p><strong>Investment:</strong> $138B government guidance fund</p>
+                    <p><strong>Infrastructure:</strong> East Data, West Computing</p>
+                    <p><strong>Western Region:</strong> $700M+ data center investments</p>
+                    <p><strong>Goal:</strong> Global AI leader by 2030</p>
+                    <p><strong>Focus:</strong> Domestic chips, self-reliance</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇪🇺 EU - €200B Infrastructure Package</h4>
+                    <p><strong>Investment:</strong> €25B AI Infrastructure Package</p>
+                    <p><strong>AI Factories:</strong> Pan-European initiative</p>
+                    <p><strong>InvestAI:</strong> €200B mobilization target</p>
+                    <p><strong>Gigafactories:</strong> €20B for AI manufacturing</p>
+                    <p><strong>Timeline:</strong> 2024-2030 Digital Decade</p>
+                    <p><strong>TEFs:</strong> €220M testing facilities</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇬🇧 UK - AI Opportunities Action Plan</h4>
+                    <p><strong>Compute:</strong> 20x increase by 2030</p>
+                    <p><strong>Investment:</strong> £14B private commitments</p>
+                    <p><strong>Growth Zones:</strong> Culham 100-500MW site</p>
+                    <p><strong>Data Centers:</strong> 6GW capacity target</p>
+                    <p><strong>Skills:</strong> 7.5M workers AI training</p>
+                    <p><strong>Update:</strong> New strategy summer 2025</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇮🇳 India - IndiaAI Mission Expansion</h4>
+                    <p><strong>Budget:</strong> ₹2,000 crore FY2025-26 (1056% increase)</p>
+                    <p><strong>GPUs:</strong> 14,000+ at subsidized rates</p>
+                    <p><strong>Philosophy:</strong> "AI for All" democratization</p>
+                    <p><strong>Startups:</strong> ₹2,000 crore direct funding</p>
+                    <p><strong>Timeline:</strong> 2024-2029 mission period</p>
+                    <p><strong>Focus:</strong> Agriculture, healthcare, education</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇸🇦 Saudi Arabia - Project Transcendence</h4>
+                    <p><strong>Investment:</strong> $100B semiconductor fund</p>
+                    <p><strong>Partners:</strong> $40B with Andreessen Horowitz</p>
+                    <p><strong>Google Deal:</strong> $5-10B Arabic AI models</p>
+                    <p><strong>Goal:</strong> Top 15 globally by 2030</p>
+                    <p><strong>Target:</strong> 300+ AI startups, 20K experts</p>
+                    <p><strong>GDP Impact:</strong> AI to contribute 12% by 2030</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇦🇪 UAE - AI Strategy 2031 Update</h4>
+                    <p><strong>Economic Target:</strong> AED 335B ($91B) contribution</p>
+                    <p><strong>MGX Fund:</strong> $100B AI investment vehicle</p>
+                    <p><strong>Stargate:</strong> Major participation announced</p>
+                    <p><strong>UAI Certification:</strong> 4-level ethics system</p>
+                    <p><strong>Priority Sectors:</strong> Resources, tourism, healthcare</p>
+                    <p><strong>Potential Gains:</strong> AED 200B+ in key sectors</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇰🇷 South Korea - Top 3 by 2027</h4>
+                    <p><strong>Investment:</strong> $49B total commitment</p>
+                    <p><strong>Compute:</strong> ₩2T National AI Computing Center</p>
+                    <p><strong>Partnership:</strong> $66M Global AI Lab with NYU</p>
+                    <p><strong>Deployment:</strong> 70% corporate by 2030</p>
+                    <p><strong>Experts:</strong> 20,000 AI specialists target</p>
+                    <p><strong>Focus:</strong> National ChatGPT development</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Investments & Funding Tab -->
+    <div id="investments" class="tab-content">
+        <div class="content-section">
+            <h3>Global AI Investment Landscape - Q1 2025 & Historical Data</h3>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>🌍 Global Investment Overview</h4>
+                    <p><strong>Q1 2025 VC:</strong> $113B total, $59.6B to AI (53%)</p>
+                    <p><strong>Mega-Round:</strong> OpenAI $40B at $300B valuation</p>
+                    <p><strong>US Dominance:</strong> $80B (71% of global)</p>
+                    <p><strong>Bay Area:</strong> $55B alone in Q1 2025</p>
+                    <p><strong>Corporate:</strong> 92% plan to increase AI spend</p>
+                    <p><strong>McKinsey:</strong> $15.5-22.9T annual potential by 2040</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇺🇸 United States - $600B+ Committed</h4>
+                    <p><strong>Stargate:</strong> $500B over 4 years announced</p>
+                    <p><strong>2024 Total:</strong> ~$67B venture funding</p>
+                    <p><strong>Per GDP:</strong> $12.90 per $1000 (historical)</p>
+                    <p><strong>Federal:</strong> $4.56B potential (1200% increase)</p>
+                    <p><strong>Trump PA Deal:</strong> $92B+ AI and energy</p>
+                    <p><strong>Focus:</strong> GenAI, infrastructure, defense</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇨🇳 China - $250B+ Total</h4>
+                    <p><strong>Government:</strong> $138B guidance fund active</p>
+                    <p><strong>Historical:</strong> $119.3B (2013-2024)</p>
+                    <p><strong>2023:</strong> $15.1B private investment</p>
+                    <p><strong>Per GDP:</strong> $6.86 per $1000</p>
+                    <p><strong>Focus:</strong> Manufacturing, smart cities, chips</p>
+                    <p><strong>Infrastructure:</strong> Massive state-led buildout</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇸🇦 Saudi Arabia - $140B+ Committed</h4>
+                    <p><strong>Project Transcendence:</strong> $100B fund</p>
+                    <p><strong>Andreessen Horowitz:</strong> $40B AI fund</p>
+                    <p><strong>PIF Allocation:</strong> Massive sovereign wealth</p>
+                    <p><strong>Google Partnership:</strong> $5-10B Arabic AI</p>
+                    <p><strong>NEOM:</strong> AI city development</p>
+                    <p><strong>Target:</strong> 12% GDP from AI by 2030</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇬🇧 United Kingdom - $40B+</h4>
+                    <p><strong>Historical:</strong> $25.5B (2013-2024)</p>
+                    <p><strong>2024:</strong> $4.5B venture funding</p>
+                    <p><strong>Per GDP:</strong> $8.82 per $1000</p>
+                    <p><strong>Government:</strong> £2.5B over 10 years</p>
+                    <p><strong>Private:</strong> £14B infrastructure commits</p>
+                    <p><strong>Focus:</strong> Fintech, healthcare, creative</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇮🇱 Israel - Highest Per GDP</h4>
+                    <p><strong>Total:</strong> $11.0B (2013-2024)</p>
+                    <p><strong>2024:</strong> $1.8B funding</p>
+                    <p><strong>Per GDP:</strong> $25.42 per $1000 (global highest)</p>
+                    <p><strong>Phase II:</strong> NIS 500M through 2027</p>
+                    <p><strong>EU Funding:</strong> €130M to 9 startups</p>
+                    <p><strong>Market Value:</strong> $4.6B projected by 2030</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇸🇬 Singapore - Regional Leader</h4>
+                    <p><strong>Total:</strong> $6.3B investment</p>
+                    <p><strong>2024:</strong> $1.1B funding</p>
+                    <p><strong>Per GDP:</strong> $15.01 per $1000</p>
+                    <p><strong>Government:</strong> S$1B+ NAIS, S$150M compute</p>
+                    <p><strong>Focus:</strong> Fintech, smart nation, healthcare</p>
+                    <p><strong>Role:</strong> ASEAN AI hub</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇨🇦 Canada - Sovereign Compute</h4>
+                    <p><strong>Total Investment:</strong> CAD $2.4B announced</p>
+                    <p><strong>Compute Strategy:</strong> CAD $2B sovereign AI</p>
+                    <p><strong>CAISI:</strong> $50M for safety institute</p>
+                    <p><strong>Historical:</strong> Strong AI research base</p>
+                    <p><strong>Challenge:</strong> No federal AI law</p>
+                    <p><strong>Focus:</strong> Research, safety, compute</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enforcement & Timeline Tab -->
+    <div id="enforcement" class="tab-content">
+        <div class="content-section">
+            <h3>Enforcement Mechanisms and Timeline - August 2025 Status</h3>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>🇪🇺 EU - Active Enforcement Phase</h4>
+                    <p><strong>Aug 2, 2025:</strong> GPAI obligations now enforceable</p>
+                    <p><strong>Penalties Active:</strong> €35M or 7% for prohibited practices</p>
+                    <p><strong>High-Risk:</strong> €15M or 3% global turnover</p>
+                    <p><strong>Misleading Info:</strong> €7.5M or 1% revenue</p>
+                    <p><strong>EU AI Office:</strong> Exclusive GPAI enforcement</p>
+                    <p><strong>Next:</strong> Aug 2026 full applicability</p>
+                    <p><strong>Sandboxes:</strong> Required by Aug 2, 2026</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇺🇸 US - Multi-Level Enforcement</h4>
+                    <p><strong>FTC Operation AI Comply:</strong> Multiple settlements</p>
+                    <p><strong>DoNotPay:</strong> $193K "robot lawyer" claims</p>
+                    <p><strong>accessiBe:</strong> $1M accessibility deception</p>
+                    <p><strong>Cleo AI:</strong> $17M settlement</p>
+                    <p><strong>SEC Actions:</strong> $400K for false AI claims</p>
+                    <p><strong>State Level:</strong> CA, NY, TX active enforcement</p>
+                    <p><strong>Philosophy:</strong> "No AI exemption from existing law"</p>
+                </div>
+                <div class="content-card">
+                    <h4>🇨🇳 China - Aggressive Campaigns</h4>
+                    <p><strong>"Clear and Bright":</strong> AI abuse crackdown April 2025</p>
+                    <p><strong>Algorithm Fines:</strong> Up to ₩100K violations</p>
+                    <p><strong>Criminal:</strong> Up to 7 years imprisonment</p>
+                    <p><strong>Executive:</strong> ₩1M personal fines</p>
+                    <p><strong>Apps Suspended:</strong> Multiple for poor monitoring</p>
+                    <p><strong>Ultraman Case:</strong> Platform liability precedent</p>
+                    <p><strong>Sept 1, 2025:</strong> Mandatory labeling begins</p>
+                </div>
+                <div class="content-card">
+                    <h4>🌍 Timeline: Key Dates 2025-2027</h4>
+                    <p><strong>Aug 2, 2025:</strong> EU GPAI rules effective ✓</p>
+                    <p><strong>Sept 1, 2025:</strong> China AI labeling mandatory</p>
+                    <p><strong>Oct 2025:</strong> Canada federal election</p>
+                    <p><strong>Jan 22, 2026:</strong> Korea Framework Act effective</p>
+                    <p><strong>Aug 2, 2026:</strong> EU AI Act full applicability</p>
+                    <p><strong>Aug 2, 2027:</strong> EU existing systems deadline</p>
+                    <p><strong>2027:</strong> Korea top-3 AI power target</p>
+                </div>
+                <div class="content-card">
+                    <h4>🏛️ Regulatory Sandboxes</h4>
+                    <p><strong>EU:</strong> Each state must establish by Aug 2026</p>
+                    <p><strong>Spain:</strong> €4.3M pilot over 3 years</p>
+                    <p><strong>UK MHRA:</strong> AI Airlock for medical devices</p>
+                    <p><strong>US Senate:</strong> S.4951 proposes fintech sandboxes</p>
+                    <p><strong>Singapore:</strong> MAS fintech sandbox includes AI</p>
+                    <p><strong>Texas:</strong> TRAIGA provides innovation zones</p>
+                </div>
+                <div class="content-card">
+                    <h4>💰 Compliance Costs Reality</h4>
+                    <p><strong>EU Average:</strong> €29,277 per AI system annually</p>
+                    <p><strong>PerceptIn Case:</strong> $344K compliance costs</p>
+                    <p><strong>EU vs R&D:</strong> 2.3x higher than development</p>
+                    <p><strong>Japan Entry:</strong> $500K over 24 months</p>
+                    <p><strong>Documentation:</strong> Major ongoing burden</p>
+                    <p><strong>Training:</strong> Mandatory AI literacy costs</p>
+                </div>
+                <div class="content-card">
+                    <h4>🛠️ Governance Platforms</h4>
+                    <p><strong>IBM watsonx:</strong> Real-time AI monitoring</p>
+                    <p><strong>Holistic AI:</strong> Automated compliance</p>
+                    <p><strong>OneTrust:</strong> AI governance suite</p>
+                    <p><strong>Features:</strong> Risk assessment, documentation</p>
+                    <p><strong>Integration:</strong> Enterprise systems</p>
+                    <p><strong>Market:</strong> Rapidly expanding sector</p>
+                </div>
+                <div class="content-card">
+                    <h4>🚨 Recent Enforcement Examples</h4>
+                    <p><strong>Delphia/Global:</strong> $400K SEC AI claims</p>
+                    <p><strong>Pieces Tech:</strong> Texas healthcare AI case</p>
+                    <p><strong>China Apps:</strong> Multiple suspensions 2025</p>
+                    <p><strong>Korea:</strong> DeepSeek suspended compliance</p>
+                    <p><strong>Platform Liability:</strong> AI copyright cases rise</p>
+                    <p><strong>Trend:</strong> Increasing global enforcement</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>Data compiled from 250+ official documents | Current as of August 3, 2025</div>
+        <div style="margin-top: 5px;">Comprehensive analysis by <strong>TechLetter.co</strong> | Sources: Government releases, regulatory filings, enforcement actions</div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Hide scroll indicator when user starts scrolling
+        const gridContainer = document.querySelector('.grid-container');
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        
+        if (gridContainer && scrollIndicator) {
+            gridContainer.addEventListener('scroll', function() {
+                if (this.scrollLeft > 50) {
+                    scrollIndicator.style.opacity = '0';
+                } else {
+                    scrollIndicator.style.opacity = '1';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
