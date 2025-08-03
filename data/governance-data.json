@@ -1,0 +1,185 @@
+{
+  "lastUpdated": "2025-08-03T00:00:00Z",
+  "version": "2.0",
+  "globalStats": {
+    "countriesAnalyzed": 50,
+    "totalInvestment": 1200000000000,
+    "keyDocuments": 250,
+    "activeEnforcement": 15
+  },
+  "countries": [
+    {
+      "id": "eu",
+      "name": "European Union",
+      "flag": "🇪🇺",
+      "region": "Europe",
+      "incomeLevel": "High",
+      "approach": "comprehensive",
+      "score": {
+        "overall": 85,
+        "regulatoryReadiness": 95,
+        "institutionalCapacity": 90,
+        "transparency": 88,
+        "riskExposure": 70,
+        "innovation": 75
+      },
+      "policy": {
+        "key": "EU AI Act (2024)",
+        "status": "Active",
+        "latest": "GPAI rules effective Aug 2, 2025",
+        "philosophy": "Risk-based, Rights-focused, Global standard",
+        "enforcement": {
+          "penalties": "€35M or 7% global turnover",
+          "active": true
+        }
+      },
+      "investment": {
+        "total": 200000000000,
+        "infrastructure": "€200B AI Infrastructure Package",
+        "highlights": ["AI Factories", "€20B gigafactories", "EuroHPC"]
+      },
+      "timeline": [
+        {"date": "2025-08-02", "event": "GPAI obligations effective"},
+        {"date": "2026-08-02", "event": "Full applicability"},
+        {"date": "2027-08-02", "event": "Existing systems compliance"}
+      ],
+      "keyFeatures": [
+        "8 prohibited AI practices",
+        "High-risk AI requirements",
+        "CE marking mandatory",
+        "Transparency obligations"
+      ],
+      "workerImpact": {
+        "summary": "Strong protections with right to explanation",
+        "details": [
+          "Employment AI classified as high-risk",
+          "Workplace emotion recognition banned",
+          "Worker notification requirements"
+        ]
+      },
+      "coordinates": [50.8503, 4.3517]
+    },
+    {
+      "id": "us",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "region": "Americas",
+      "incomeLevel": "High",
+      "approach": "innovation-first",
+      "score": {
+        "overall": 78,
+        "regulatoryReadiness": 65,
+        "institutionalCapacity": 85,
+        "transparency": 70,
+        "riskExposure": 80,
+        "innovation": 95
+      },
+      "policy": {
+        "key": "AI Action Plan (July 23, 2025)",
+        "status": "Active",
+        "latest": "Winning the AI Race strategy released",
+        "philosophy": "Deregulation, Remove barriers, AI leadership",
+        "enforcement": {
+          "penalties": "Varies by state, FTC active",
+          "active": true
+        }
+      },
+      "investment": {
+        "total": 600000000000,
+        "infrastructure": "$500B Stargate Project",
+        "highlights": ["$100B immediate deployment", "Federal site leasing", "Nuclear power"]
+      },
+      "timeline": [
+        {"date": "2025-07-23", "event": "AI Action Plan released"},
+        {"date": "2025-07-31", "event": "180-day review deadline"},
+        {"date": "2026-01-01", "event": "Full implementation"}
+      ],
+      "keyFeatures": [
+        "90 policy actions",
+        "3 pillars approach",
+        "Federal site leasing",
+        "Clean energy requirements"
+      ],
+      "workerImpact": {
+        "summary": "Limited federal oversight, market-based approach",
+        "details": [
+          "State-level variations",
+          "DOL guidance only",
+          "Previous equity initiatives under review"
+        ]
+      },
+      "coordinates": [38.9072, -77.0369]
+    },
+    {
+      "id": "china",
+      "name": "China",
+      "flag": "🇨🇳",
+      "region": "Asia",
+      "incomeLevel": "Upper-middle",
+      "approach": "state-led",
+      "score": {
+        "overall": 82,
+        "regulatoryReadiness": 88,
+        "institutionalCapacity": 92,
+        "transparency": 60,
+        "riskExposure": 85,
+        "innovation": 85
+      },
+      "policy": {
+        "key": "Multiple Active Regulations",
+        "status": "Active with continuous updates",
+        "latest": "AI labeling rules Sept 1, 2025",
+        "philosophy": "State control, Security-first, Socialist values",
+        "enforcement": {
+          "penalties": "Criminal up to 7 years",
+          "active": true
+        }
+      },
+      "investment": {
+        "total": 250000000000,
+        "infrastructure": "$138B government guidance fund",
+        "highlights": ["300 EFLOPS by 2025", "East-West computing", "Domestic chips"]
+      },
+      "timeline": [
+        {"date": "2025-09-01", "event": "Mandatory AI labeling"},
+        {"date": "2025-12-31", "event": "300 EFLOPS target"},
+        {"date": "2030-12-31", "event": "Global leadership goal"}
+      ],
+      "keyFeatures": [
+        "1,400+ algorithms registered",
+        "Security assessments mandatory",
+        "Content alignment required",
+        "Clear and Bright campaign"
+      ],
+      "workerImpact": {
+        "summary": "AI+ integration with social credit implications",
+        "details": [
+          "40% employees concerned about monitoring",
+          "State-owned enterprise leadership",
+          "Limited worker protections"
+        ]
+      },
+      "coordinates": [39.9042, 116.4074]
+    },
+    {
+      "id": "uk",
+      "name": "United Kingdom",
+      "flag": "🇬🇧",
+      "region": "Europe",
+      "incomeLevel": "High",
+      "approach": "innovation-first",
+      "score": {
+        "overall": 76,
+        "regulatoryReadiness": 70,
+        "institutionalCapacity": 80,
+        "transparency": 78,
+        "riskExposure": 72,
+        "innovation": 85
+      },
+      "policy": {
+        "key": "AI Bill pending (Summer 2025)",
+        "status": "Non-statutory framework",
+        "latest": "Lord Holmes' Bill expected",
+        "philosophy": "Pro-innovation, Light-touch, Agile approach",
+        "enforcement": {
+          "penalties": "None AI-specific",
