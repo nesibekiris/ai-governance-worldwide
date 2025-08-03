@@ -1,0 +1,98 @@
+import { Suspense } from 'react'
+import { HeroSection } from '@/components/hero-section'
+import { StatsCards } from '@/components/stats-cards'
+import { InteractiveMap } from '@/components/interactive-map'
+import { ComparisonMatrix } from '@/components/comparison-matrix'
+import { SearchSection } from '@/components/search-section'
+import { WhatsNew } from '@/components/whats-new'
+import { NewsletterSignup } from '@/components/newsletter-signup'
+import { getGovernanceData } from '@/lib/data'
+
+export const revalidate = 3600 // Revalidate every hour
+
+export default async function HomePage() {
+  const data = await getGovernanceData()
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <HeroSection />
+      
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* What's New Section */}
+        <section className="py-12">
+          <WhatsNew />
+        </section>
+
+        {/* Stats Overview */}
+        <section className="py-12">
+          <h2 className="mb-8 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Global AI Governance at a Glance
+          </h2>
+          <StatsCards stats={data.globalStats} />
+        </section>
+
+        {/* Interactive World Map */}
+        <section className="py-12">
+          <h2 className="mb-8 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+            AI Governance Readiness Map
+          </h2>
+          <div className="overflow-hidden rounded-xl shadow-2xl">
+            <Suspense fallback={<div className="h-[600px] animate-pulse bg-gray-200" />}>
+              <InteractiveMap data={data.countries} />
+            </Suspense>
+          </div>
+        </section>
+
+        {/* Search and Filter Section */}
+        <section className="py-12">
+          <SearchSection />
+        </section>
+
+        {/* Comparison Matrix */}
+        <section className="py-12">
+          <h2 className="mb-4 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Regulatory Framework Comparison
+          </h2>
+          <p className="mx-auto mb-8 max-w-3xl text-center text-lg text-gray-600 dark:text-gray-300">
+            Compare AI governance approaches across major jurisdictions. 
+            Click any country for detailed analysis.
+          </p>
+          <ComparisonMatrix countries={data.countries} />
+        </section>
+
+        {/* Key Insights */}
+        <section className="py-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-xl bg-blue-50 p-8 dark:bg-blue-900/20">
+              <h3 className="mb-4 text-xl font-bold text-blue-900 dark:text-blue-100">
+                📈 Top Movers in 2025
+              </h3>
+              <ul className="space-y-2 text-blue-800 dark:text-blue-200">
+                <li>🇰🇷 South Korea: First comprehensive AI law in Asia-Pacific</li>
+                <li>🇺🇸 USA: $500B Stargate project revolutionizes infrastructure</li>
+                <li>🇪🇺 EU: GPAI rules activate enforcement mechanisms</li>
+                <li>🇯🇵 Japan: Zero-penalty approach attracts investment</li>
+              </ul>
+            </div>
+            <div className="rounded-xl bg-amber-50 p-8 dark:bg-amber-900/20">
+              <h3 className="mb-4 text-xl font-bold text-amber-900 dark:text-amber-100">
+                🎯 Key Trends
+              </h3>
+              <ul className="space-y-2 text-amber-800 dark:text-amber-200">
+                <li>• Transatlantic regulatory divergence deepens</li>
+                <li>• Asia-Pacific leads in innovation-friendly policies</li>
+                <li>• Middle East commits $240B+ to AI infrastructure</li>
+                <li>• Enforcement actions accelerate globally</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Signup */}
+        <section className="py-12">
+          <NewsletterSignup />
+        </section>
+      </div>
+    </div>
+  )
+}
